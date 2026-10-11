@@ -1,0 +1,58 @@
+{
+  "environment": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "cpu_count": 5,
+    "external_inference": false
+  },
+  "dataset": {
+    "initial_incidents": 3,
+    "resources": 6,
+    "injected_events": 10,
+    "final_incidents": 13
+  },
+  "measurements": {
+    "dashboard_http": {
+      "samples": 50,
+      "p50_ms": 3.063,
+      "p95_ms": 3.662,
+      "max_ms": 4.059
+    },
+    "proposal_http": {
+      "samples": 30,
+      "p50_ms": 9.849,
+      "p95_ms": 12.901,
+      "max_ms": 17.384
+    },
+    "event_ingestion_http": {
+      "samples": 10,
+      "p50_ms": 32.753,
+      "p95_ms": 97.031,
+      "max_ms": 97.031
+    },
+    "accepted_request_to_sse": {
+      "samples": 10,
+      "p50_ms": 499.38,
+      "p95_ms": 502.471,
+      "max_ms": 502.471
+    }
+  },
+  "planner_microbenchmark": {
+    "recommendation_ms_p50": 9.103,
+    "recommendation_ms_p95": 15.638,
+    "recommendation_ms_max": 31.416,
+    "invalid_assignment_count": 0,
+    "infeasible_plan_count": 0,
+    "sample_count": 100,
+    "incident_count": 13,
+    "resource_count": 6,
+    "ranking_accuracy": null,
+    "conflict_precision": null,
+    "conflict_recall": null
+  },
+  "notes": [
+    "Loopback HTTP plus committed SSE reception; UI rendering excluded from SSE timings.",
+    "Event samples include server ingestion, agents, scoring, planning and persistence.",
+    "No labeled ranking accuracy or conflict precision/recall claimed."
+  ]
+}
